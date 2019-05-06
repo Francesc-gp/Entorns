@@ -12,7 +12,7 @@
 <section id="missatges">
 <?php
 include 'connexioBD.php';
-$sql="select * FROM(SELECT hora,usuari,text,id from missatges order by id desc limit 10) as chat ORDER BY id asc";
+$sql = "SELECT usuari, texto, hora FROM missatges ORDER BY hora";
 $result=mysqli_query($conn,$sql);
 while ($row = mysqli_fetch_assoc($result)) {
         echo "<p>";
